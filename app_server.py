@@ -63,7 +63,7 @@ async def generate_tiles_from_chessboards(request):
 async def generate_chessboard(request):
     filepath = generate_random_chessboard("http://www.fen-to-image.com/image/32/{}")
     return web.FileResponse(filepath, headers={"Content-Type": "image/png"})
-
+    
 
 app = web.Application()
 app.router.add_get("/recognize", recognize_chessboard)
